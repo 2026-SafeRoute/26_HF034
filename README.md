@@ -1,20 +1,20 @@
-<!-- 📷 [이미지] 서비스 로고 : src에 로고 이미지 URL 넣기 (제목 왼쪽에 붙어요, 권장 가로 110px) -->
+<sub>2026 한이음 드림업 · 26_HF034 · Team 데드락</sub>
+
 # Safe Route <img width="110" align="left" alt="SafeRoute 로고" src="https://github.com/user-attachments/assets/ae3ee84e-ef09-4d46-a864-c0243c664cb9" />
+
+<!-- **관찰을 넘어, 대응하는 대피 훈련으로** -->
 
 ![SafeRoute](https://img.shields.io/badge/Safe%20Route-AI%C2%B7IoT%20%EA%B8%B0%EB%B0%98%20%EC%8B%A4%EC%8B%9C%EA%B0%84%20%ED%99%94%EC%9E%AC%20%EB%8C%80%ED%94%BC%20%ED%9B%88%EB%A0%A8%20%EA%B4%80%EB%A6%AC%20%ED%94%8C%EB%9E%AB%ED%8F%BC-DBEAFE?style=for-the-badge&labelColor=2563EB)
 
-<br/>
-
+ <br/>
+ 
 <p>
-  <img alt="React" src="https://img.shields.io/badge/React-18-149ECA?logo=react&logoColor=white" />
-  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-5.6-3178C6?logo=typescript&logoColor=white" />
-  <img alt="Spring Boot" src="https://img.shields.io/badge/Spring%20Boot-3.5-6DB33F?logo=springboot&logoColor=white" />
-  <img alt="Java" src="https://img.shields.io/badge/Java-17-007396?logo=openjdk&logoColor=white" />
-  <img alt="Python" src="https://img.shields.io/badge/Python-3.9+-3776AB?logo=python&logoColor=white" />
-  <img alt="YOLOv8" src="https://img.shields.io/badge/YOLOv8-Hailo--8L-111F68?logo=yolo&logoColor=white" />
-  <img alt="Raspberry Pi" src="https://img.shields.io/badge/Raspberry%20Pi-5-A22846?logo=raspberrypi&logoColor=white" />
-  <img alt="AWS" src="https://img.shields.io/badge/AWS-EC2%20%7C%20S3%20%7C%20DynamoDB-FF9900?logo=amazonwebservices&logoColor=white" />
+  <img alt="엣지 AI 혼잡도 감지" src="https://img.shields.io/badge/%EC%97%A3%EC%A7%80%20AI%20%ED%98%BC%EC%9E%A1%EB%8F%84%20%EA%B0%90%EC%A7%80-E5E7EB?style=flat" />
+  <img alt="실시간 대피 경로 재계산" src="https://img.shields.io/badge/%EC%8B%A4%EC%8B%9C%EA%B0%84%20%EB%8C%80%ED%94%BC%20%EA%B2%BD%EB%A1%9C%20%EC%9E%AC%EA%B3%84%EC%82%B0-E5E7EB?style=flat" />
+  <img alt="IoT 유도등 방향 제어" src="https://img.shields.io/badge/IoT%20%EC%9C%A0%EB%8F%84%EB%93%B1%20%EB%B0%A9%ED%96%A5%20%EC%A0%9C%EC%96%B4-E5E7EB?style=flat" />
+  <img alt="훈련 평가 보고서" src="https://img.shields.io/badge/%ED%9B%88%EB%A0%A8%20%ED%8F%89%EA%B0%80%20%EB%B3%B4%EA%B3%A0%EC%84%9C-E5E7EB?style=flat" />
 </p>
+
 
 <p>
   <a href="#1-프로젝트-개요">프로젝트 개요</a>
@@ -48,7 +48,7 @@
 ## 💡1. 프로젝트 개요
 
 ### 1-1. 프로젝트 소개
-- 프로젝트 명 : Safe Route: AI·IoT 기반 실시간 화재 훈련 대피 관리 플랫폼
+- 프로젝트 명 : [Safe Route] AI·IoT 기반 실시간 화재 훈련 대피 관리 플랫폼
 - 프로젝트 정의 : AI 비전 분석과 IoT 비상유도등을 연동해 훈련 중 혼잡·병목을 실시간으로 파악하고, 대피 경로를 재계산해 유도등 방향을 바꾸며, 훈련 결과를 자동으로 평가하는 화재 대피 훈련 관리·평가 플랫폼
 
 
@@ -255,7 +255,7 @@
 | 단계 | 동작 과정 |
 | :---: | :--- |
 | 사전&nbsp;구축 | 도면 업로드 → AI 세그멘테이션(벽·복도·계단·문 구분) → 노드·엣지 자동 변환 → PostgreSQL 저장 → 관리자 POI 보정·경로 검증 |
-| 훈련&nbsp;시작 | 발화 위치·시작 노드 지정 → 화재 회피 다익스트라 최단 경로 탐색 → 도면 위 기본 경로와 유도등 초기 방향 표시 |
+| 훈련&nbsp;시작 | 발화 위치·시작 노드 지정 → 화재 회피 최단 경로 탐색 (위험 가중 다익스트라) → 도면 위 기본 경로와 유도등 초기 방향 표시 |
 | 혼잡&nbsp;감지 | IP 카메라 RTSP 수신 → Raspberry Pi 5 + Hailo-8L YOLOv8 사람 탐지 → 밀도 기반 혼잡도 판정 → 관측값·이벤트 서버 전송, 캡처 이미지 S3 업로드 |
 | 경&#8288;로&nbsp;재&#8288;계&#8288;산 | 혼잡 구간 가중치 상향·화재 구간 제외 → 우회 경로 산출 → 관리자 승인 → 유도등 명령 적재 → Pi 폴링·릴레이 제어 → ACK 보고 |
 | 결과&nbsp;확인 | 참가자는 유도등 방향을 따라 분산 대피, 관리자는 대시보드와 자동 생성된 평가 보고서로 결과 확인 |
@@ -281,57 +281,10 @@
 
 ### 3-6. 핵심 알고리즘
 
-#### ① 도면 자동 인식 · 노드/엣지 변환
+#### 대피 경로 탐색 · 재계산 · 유도등 제어
 
 ```
-[도면 업로드] 관리자 → BE 서버 : 도면 이미지 · 실측 가로/세로(m) · 그리드 셀 크기 전달
-      │
-      ▼
-BE 서버 → S3 : 도면 이미지 저장  →  AI 서버(FastAPI) : 분석 요청
-      │
-      ▼
-U-Net 세그멘테이션 → 벽 · 방 · 복도 · 문 · 창문 · 계단 6개 클래스로 픽셀 분류
-      │
-      ▼
-이동 가능 영역 추출 → 출구 · 계단 · 교차점은 노드, 통로는 엣지로 변환
-      → 실측 크기를 반영해 엣지 거리(m) 계산
-      │
-      ▼
-BE 서버 : 노드 · 엣지 · 그리드 셀을 PostgreSQL에 저장
-      │
-      ▼
-관리자 보정 : 노드 · 엣지 수동 편집, 최종 탈출구(EXIT) 지정, CCTV · 유도등 위치 배치
-      │
-      ▼
-훈련 준비 검증 : 시작 노드 · 최종 탈출구 지정 + 다익스트라 경로 탐색 성공 시 훈련 가능
-```
-
-#### ② 엣지 AI 혼잡도 분석
-
-```
-[훈련 시작] Raspberry Pi → BE 서버 : 훈련 활성 여부 · 임계값 · 감시 면적 설정 조회
-      │
-      ▼  (5 FPS)
-IP 카메라 RTSP 영상 수신 → Hailo-8L NPU에서 YOLOv8 사람 탐지
-      │
-      ▼
-ROI(감시 구역) 안의 인원 집계 → 밀도 = 인원 ÷ 감시 면적(㎡)
-      │
-      ▼
-밀도를 임계값과 비교 → NORMAL / CAUTION / CROWDED / VERY_CROWDED 분류
-      │
-      ├─ 집계 구간마다 ─────→ 평균 · 최대 인원 관측값 + 모니터링 스냅샷(S3) 전송
-      └─ 단계 변화 시 ──────→ 연속 프레임 조건(진입 3프레임 · 복귀 5프레임) 충족 시
-                              혼잡 시작 / 단계 상승 / 종료 이벤트 + 캡처 이미지 전송
-      │
-      ▼
-BE 서버 : 받은 인원으로 밀도 · 단계를 다시 판정해 DynamoDB에 저장 → 대시보드 실시간 반영
-```
-
-#### ③ 대피 경로 탐색 · 재계산 · 유도등 제어
-
-```
-[훈련 시작] 시작 노드 → 최종 탈출구 다익스트라 최단 경로 탐색 (화재 구간 제외)
+[훈련 시작] 시작 노드 → 최종 탈출구 위험 가중 다익스트라 최단 경로 탐색 (화재 구간 제외)
       │
       ▼
 혼잡 이벤트 수신 또는 화재 확산 단계 진행
@@ -344,7 +297,7 @@ BE 서버 : 받은 인원으로 밀도 · 단계를 다시 판정해 DynamoDB에
 우회 경로 산출 → 대시보드에 재탐색 제안(PENDING) 표시
       │
       ├─ 거절 ──────→ 기존 경로 유지
-      └─ 승인 ──────→ 출구 기준 역방향 다익스트라로 층 전체 노드의 다음 이동 방향 계산
+      └─ 승인 ──────→ 출구 기준 위험 가중 다익스트라로 층 전체 노드의 다음 이동 방향 계산
                       → 유도등별 LEFT / RIGHT 명령 적재
       │
       ▼
@@ -354,27 +307,6 @@ Raspberry Pi : 명령 큐 폴링 → 이더넷 릴레이(Modbus TCP)로 좌 · �
 관리자 종료 또는 10분 경과 시 훈련 종료
 ```
 
-#### ④ 훈련 평가 등급 산출
-
-```
-[훈련 종료] 관리자 : 실제 대피 완료 인원 입력
-      │
-      ▼
-평가 항목 산출 : 총 대피 시간 · 대피 성공률(생존 인원 ÷ 참여 인원 × 100) · 병목 발생 횟수 · 경로 이탈률
-      │
-      ▼
-가중 합산 : 대피 시간 35% + 대피 성공률 30% + 병목 발생 20% + 경로 이탈률 15% → 100점 만점
-      │
-      ▼
-등급 판정 : A(90점 이상) · B(80~89) · C(70~79) · D(60~69) · F(60점 미만)
-      │
-      ▼
-보고서 생성 : 종합 등급 · 항목별 점수 · 대피 추이 차트 · 강점 / 개선점 · 권고사항 → PDF 다운로드
-```
-
-
-
-</p>
 
 <br />
 
@@ -389,139 +321,204 @@ Raspberry Pi : 명령 큐 폴링 → 이더넷 릴레이(Modbus TCP)로 좌 · �
 
 ## 💡5. 핵심 소스코드
 
-#### 5-1. AI · Edge: 밀도 기반 혼잡도 판정 및 혼잡 이벤트 감지
-- 소스코드 설명 : Raspberry Pi에서 YOLOv8로 탐지한 ROI 내 인원을 감시 면적으로 나눠 밀도를 구하고, 단계별 임계값으로 혼잡도를 판정합니다. 오탐을 막기 위해 연속 프레임 조건을 만족할 때만 혼잡 시작·단계 상승·종료 이벤트를 서버로 보냅니다.
+#### 5-1. AI · Edge : RTSP 영상 수신 및 Hailo 기반 사람 탐지
+> RTSP 영상 수신 → **Hailo NPU 추론** → 인원 집계 → 밀도 기반 혼잡도 판단 → 서버 전송
 
+- 소스코드 설명 : IP 카메라의 RTSP 영상을 프레임 단위로 받고, 끊기면 지수 백오프로 재연결합니다. 받은 프레임은 Raspberry Pi 5의 Hailo-8L NPU에서 YOLOv8로 추론해 사람만 골라냅니다.
+
+**IP 카메라 연동 : RTSP 영상 수신**
 ```Python
-# app.py : 인원 → 밀도 → 혼잡도 → 이벤트
-def _process_local_event(self, snapshot, count, now_ms, config):
-    density = count / config.monitored_area_m2
-    level = config.thresholds.classify(density)
-    event_type = self._event_detector.observe(level, now_ms, config.event_detection)
-    if event_type is None or not config.training_session_id:
-        return
-    event = CongestionEvent(
-        str(uuid.uuid4()), config.training_session_id, self.cctv_code,
-        event_type, now_ms, count, density, level, config.config_version,
+class RtspVideoSource(VideoSource):
+    def __init__(self, url: str, max_reconnects: int = 5, base_delay_sec: float = 1.0,
+                 max_delay_sec: float = 30.0, capture_factory: Optional[Callable] = None,
+                 sleeper: Callable[[float], None] = time.sleep) -> None:
+        if max_reconnects < 0:
+            raise ValueError("max_reconnects must not be negative")
+        self.url = url
+        self.max_reconnects = max_reconnects
+        self.base_delay_sec = base_delay_sec
+        self.max_delay_sec = max_delay_sec
+        self._capture_factory = capture_factory or _opencv_capture
+        self._sleep = sleeper
+        self._cap = self._capture_factory(url)
+
+    def frames(self) -> Iterator[object]:
+        reconnects = 0
+        while self._cap is not None:
+            ok, frame = self._cap.read() if self._cap.isOpened() else (False, None)
+            if ok:
+                reconnects = 0
+                yield frame
+                continue
+            if reconnects >= self.max_reconnects:
+                # 정상 종료와 구분해야 systemd 같은 감독자가 프로세스를 다시 띄운다.
+                raise RtspStreamLostError(f"RTSP reconnect limit reached ({self.max_reconnects})")
+            delay = min(self.base_delay_sec * (2 ** reconnects), self.max_delay_sec)
+            reconnects += 1
+            logger.warning("RTSP read failed; reconnect %d/%d in %.1fs", reconnects, self.max_reconnects, delay)
+            self._sleep(delay)
+            self._cap.release()
+            self._cap = self._capture_factory(self.url)
+```
+
+**Hailo 기반 사람 탐지**
+```Python
+def detect(self, frame) -> list[Detection]:
+    if self._closed:
+        raise HailoRuntimeError("Hailo detector가 이미 종료되었습니다.")
+    if (
+        not isinstance(frame, np.ndarray)
+        or frame.ndim != 3
+        or frame.shape[2] != 3
+        or frame.shape[0] <= 0
+        or frame.shape[1] <= 0
+        or frame.dtype != np.uint8
+    ):
+        raise ValueError(
+            "frame must be a non-empty uint8 BGR ndarray with shape (H, W, 3)"
+        )
+
+    original_height, original_width = frame.shape[:2]
+    prepared, scale, pad_x, pad_y = self._preprocess(frame)
+    class_outputs = self._runtime.infer(prepared)
+    return self._person_detections(
+        class_outputs,
+        original_width,
+        original_height,
+        scale,
+        pad_x,
+        pad_y,
     )
-    self.delivery_queue.submit_event(EventDelivery(event, snapshot))
-
-# models.py : 서버가 내려준 임계값으로 4단계 판정
-def classify(self, density: float) -> CongestionLevel:
-    if density >= self.very_crowded_from:
-        return CongestionLevel.VERY_CROWDED
-    if density >= self.crowded_from:
-        return CongestionLevel.CROWDED
-    if density >= self.caution_from:
-        return CongestionLevel.CAUTION
-    return CongestionLevel.NORMAL
 ```
 
-#### 5-2. AI · 도면 분석: 세그멘테이션 결과를 노드·엣지 그래프로 변환
-- 소스코드 설명 : S3에 업로드된 도면을 U-Net으로 분석해 공간 그래프를 만들고, 도면의 실측 크기를 반영해 노드 좌표와 엣지 거리(m)를 계산해 백엔드에 돌려주는 FastAPI 엔드포인트입니다.
+#### 5-2. AI · Edge : ROI 인원 집계 및 밀도 기반 혼잡도 판단
+> RTSP 영상 수신 → Hailo NPU 추론 → **인원 집계 → 밀도 기반 혼잡도 판단** → 서버 전송
 
+- 소스코드 설명 : 탐지 결과 중 감시 구역(ROI) 안의 인원만 집계합니다. 인원수는 5 FPS로 지속 계산하며, 관측 결과는 1초 주기로 서버에 전송합니다. 밀도는 서버가 내려준 임계값으로 정상·주의·혼잡·매우 혼잡 4단계로 판정합니다.
+
+**(ROI) 인원 집계**
 ```Python
-@app.post("/analyze-floorplan", response_model=AnalyzeResponse)
-def analyze_floorplan_endpoint(req: AnalyzeRequest):
-    original_image = download_image_from_s3(req.image_key)
-    # ... U-Net 세그멘테이션 및 공간 그래프 생성
-    result = analyze_floorplan(tmp_path, model=_model, device=DEVICE,
-                               image_size=req.image_size, mode=ANALYSIS_MODE)
-    G = result["G"]
-
-    width_scale = req.real_width_m / req.image_size
-    height_scale = req.real_height_m / req.image_size
-
-    edges_out = []
-    for u, v, edata in G.edges(data=True):
-        dr = G.nodes[u]["row"] - G.nodes[v]["row"]
-        dc = G.nodes[u]["col"] - G.nodes[v]["col"]
-        distance_m = math.sqrt((dc * width_scale) ** 2 + (dr * height_scale) ** 2)
-        edges_out.append(EdgeOut(from_temp_id=str(u), to_temp_id=str(v),
-                                 distance=round(distance_m, 3), bidirectional=True))
-    ...
-```
-
-#### 5-3. BE: 혼잡·화재를 반영한 다익스트라 대피 경로 탐색
-- 소스코드 설명 : 시작 노드에서 가장 가까운 최종 탈출구까지 최단 경로를 찾습니다. 엣지 가중치에 혼잡 단계별 배율과 화재 근접 위험 배율을 곱하고, 매우 혼잡하거나 화재로 막힌 엣지는 그래프에서 제외합니다. 같은 입력이면 항상 같은 경로가 나오도록 거리가 같을 때 노드 ID 순으로 꺼냅니다.
-
-```Java
-PriorityQueue<NodeDistance> queue = new PriorityQueue<>(QUEUE_ORDER);
-queue.add(new NodeDistance(startNodeId, 0.0));
-Set<UUID> visited = new HashSet<>();
-
-while (!queue.isEmpty()) {
-    NodeDistance current = queue.poll();
-    if (!visited.add(current.nodeId())) {
-        continue;
-    }
-
-    MapNode currentNode = nodeById.get(current.nodeId());
-    if (currentNode.isExitTarget()) {
-        return buildRoute(nodeById, previous, distance, current.nodeId());
-    }
-
-    for (MapEdge edge : adjacency.getOrDefault(current.nodeId(), Collections.emptyList())) {
-        UUID neighbor = edge.getToNode().getId().equals(current.nodeId())
-                ? edge.getFromNode().getId()
-                : edge.getToNode().getId();
-
-        double walked = walkedMeters.get(current.nodeId()) + edge.getDistance();
-        double arrivalSec = walked / FireProximity.WALKING_SPEED_MPS;
-        double newDistance = distance.get(current.nodeId())
-                + calculateWeight(edge, weightMultipliers, fireProximity, arrivalSec);
-        if (newDistance < distance.getOrDefault(neighbor, Double.MAX_VALUE)) {
-            distance.put(neighbor, newDistance);
-            walkedMeters.put(neighbor, walked);
-            previous.put(neighbor, current.nodeId());
-            queue.add(new NodeDistance(neighbor, newDistance));
-        }
-    }
-}
-throw new ApiException(EvacuationErrorCode.EVACUATION_ROUTE_NOT_FOUND);
-
-private double calculateWeight(MapEdge edge, Map<UUID, Double> weightMultipliers,
-        FireProximity fireProximity, Double arrivalSec) {
-    return edge.getDistance()
-            * weightMultipliers.getOrDefault(edge.getId(), 1.0)   // CAUTION ×1.5, CROWDED ×3.0
-            * fireProximity.multiplier(edge.getId(), arrivalSec);  // 화재 근접 위험 배율
-}
-```
-
-#### 5-4. IoT: 유도등 제어 명령 폴링 · 릴레이 제어 · ACK 보고
-- 소스코드 설명 : 서버(EC2)가 사설망의 Pi를 직접 호출할 수 없기 때문에, Pi가 서버의 유도등 명령 큐를 주기적으로 조회해 방향에 맞는 릴레이 채널을 켜고 실행 결과를 ACK로 보고합니다.
-
-```Python
-def poll_once(self) -> int:
-    commands = self._client.fetch_light_commands(self._cctv_code)
-    for command in commands:
-        self._execute_and_ack(command)
-    return len(commands)
-
-def _execute_and_ack(self, command: dict) -> None:
-    command_id = command.get("commandId")
-    direction = command.get("direction")
+def process_frame(self, frame, captured_at_ms: Optional[int] = None) -> Optional[CongestionObservation]:
+    config = self._config
+    if config is None or not config.training_active or not config.training_session_id:
+        return None
+    self._ensure_delivery_session(config.training_session_id)
+    captured_at_ms = self._epoch_ms() if captured_at_ms is None else captured_at_ms
     try:
-        self._apply(direction)
-    except (RelayControllerError, ValueError) as exc:
-        self._client.ack_light_command(command_id, success=False, fail_reason=str(exc))
-        return
-    self._client.ack_light_command(command_id, success=True)
-
-def _apply(self, direction: Optional[str]) -> None:
-    if direction == "LEFT":
-        self._relay.switch_to(LEFT_CHANNEL)
-    elif direction == "RIGHT":
-        self._relay.switch_to(RIGHT_CHANNEL)
-    elif direction == "OFF":
-        self._relay.all_off()
-    elif direction == "BOTH":
-        self._relay.both_on()
-    else:
-        raise ValueError(f"알 수 없는 유도등 방향: {direction}")
+        detections = self.detector.detect(frame)
+    except Exception as exc:
+        now = self._monotonic()
+        if now - self._last_inference_error_log >= 10.0:
+            self._last_inference_error_log = now
+            logger.error("Person inference failed (further errors suppressed for 10s): %s", type(exc).__name__)
+        return None
+    height, width = frame.shape[:2]
+    inside_detections = self.roi_counter.filter_inside(detections, width, height)
+    count = len(inside_detections)
+    if self.preview is not None:
+        self._preview_stop_requested = not self.preview.show(frame, detections, inside_detections)
+    snapshot = Snapshot(frame.copy(), tuple(detections), tuple(inside_detections))
+    self._process_local_event(snapshot, count, captured_at_ms, config)
+    if self._initial_snapshot_pending:
+        # 훈련 활성화 직후 첫 화면은 집계 구간이 끝날 때까지 기다리지 않고 단일 샘플로 바로 보낸다.
+        # 이 샘플은 아래 정기 집계에도 그대로 포함된다.
+        self._initial_snapshot_pending = False
+        self._submit_monitoring(config, WindowSummary(
+            captured_at_ms, captured_at_ms, captured_at_ms, 1, float(count), count,
+        ), snapshot)
+    summary = self.aggregator.add_sample(count, captured_at_ms)
 ```
 
-#### 5-5. FE: 훈련 세션 실시간 이벤트 구독 (STOMP WebSocket)
+**밀도 기반 혼잡도 판단**
+```Python
+@dataclass(frozen=True)
+class CongestionThresholds:
+    caution_from: float
+    crowded_from: float
+    very_crowded_from: float
+
+    def __post_init__(self) -> None:
+        if not (0 <= self.caution_from < self.crowded_from < self.very_crowded_from):
+            raise ValueError("congestion thresholds must be non-negative and increasing")
+
+    def classify(self, density: float) -> CongestionLevel:
+        if density >= self.very_crowded_from:
+            return CongestionLevel.VERY_CROWDED
+        if density >= self.crowded_from:
+            return CongestionLevel.CROWDED
+        if density >= self.caution_from:
+            return CongestionLevel.CAUTION
+        return CongestionLevel.NORMAL
+```
+
+#### 5-3. IoT : 유도등 제어 명령 및 릴레이 제어
+> 서버 명령 조회 → **방향 판별 → 릴레이 제어** → 유도등 점등 → 실행 결과 전송
+
+- 소스코드 설명 : 백엔드는 유도등 상태와 설정을 검증한 뒤 방향 명령을 큐에 적재하고, 상태 변경 이벤트를 발행합니다. Pi는 명령을 받아 이더넷 릴레이 채널을 제어하며, 좌·우 채널이 동시에 켜지지 않도록 인터록을 둡니다.
+
+**유도등 제어 명령**
+```Java
+public LightDirectionResponse changeDirection(
+        UUID lightId, ChangeLightDirectionRequest request, String email) {
+    IoTLight light = findLightForSchoolOrThrow(lightId, email);
+    return changeDirection(light, request);
+}
+
+private LightDirectionResponse changeDirection(
+        IoTLight light, ChangeLightDirectionRequest request) {
+    IoTLightDirection direction = request.direction();
+
+    if (!light.isEnabled()) {
+        throw new ApiException(IoTLightErrorCode.LIGHT_DISABLED);
+    }
+    if (direction != IoTLightDirection.OFF && !light.isGuidanceConfigured()) {
+        throw new ApiException(IoTLightErrorCode.GUIDANCE_NOT_CONFIGURED);
+    }
+    if (light.getCctv() == null) {
+        throw new ApiException(IoTLightErrorCode.CCTV_NOT_ASSIGNED);
+    }
+
+    enqueueCommand(light, direction);
+    iotLightDirectionStore.update(light.getId(), direction);
+    Instant changedAt = Instant.now();
+    logDirectionChange(light, direction, changedAt);
+    trainingEventPublisher.publishIoTLightStatusUpdatedAfterCommit(light, direction);
+
+    return new LightDirectionResponse(light.getId(), direction, changedAt);
+}
+```
+
+**릴레이 제어**
+```Python
+def turn_on(self, channel: RelayChannel) -> None:
+    """지정한 채널만 켠다.
+
+    반대 채널이 실제로 ON 상태로 확인되면 BothChannelsOnError를 던지고
+    아무 명령도 보내지 않는다. 방향을 전환하려면 switch_to()를 사용할 것.
+    """
+    with self._lock:
+        other = self._other_channel(channel)
+        if self._read_channel(other):
+            raise BothChannelsOnError(
+                f"{other.name}가 이미 ON 상태입니다. "
+                f"{channel.name}을 켜려면 먼저 {other.name}을 끄거나 switch_to()를 사용하세요."
+            )
+        self._write_channel(channel, True)
+
+def turn_off(self, channel: RelayChannel) -> None:
+    """지정한 채널만 끈다. (OFF는 인터록 대상이 아니므로 항상 허용)"""
+    with self._lock:
+        self._write_channel(channel, False)
+
+def switch_to(self, channel: RelayChannel) -> None:
+    """반대 채널을 끄고 지정한 채널을 켠다. 좌/우 방향 전환에 사용."""
+    with self._lock:
+        other = self._other_channel(channel)
+        self._write_channel(other, False)
+        self._write_channel(channel, True)
+```
+
+#### 5-4. FE : 훈련 세션 실시간 이벤트 구독 (STOMP WebSocket)
 - 소스코드 설명 : JWT로 STOMP 서버에 연결해 진행 중인 훈련 세션의 토픽을 구독합니다. 상태 변경이나 경로 차단 이벤트가 오면 관련 쿼리를 무효화해 대시보드를 최신 상태로 갱신하고, 경로 재탐색 제안 등은 화면에 바로 전달합니다.
 
 ```TypeScript
@@ -555,6 +552,7 @@ client.activate();
 return () => void client.deactivate();
 ```
 
+
 <br />
 <br />
 
@@ -565,6 +563,6 @@ return () => void client.deactivate();
 <br />
 
 <div align="center">
-  <strong>관찰을 넘어, 대응하는 대피 훈련으로, Safe Route</strong>
+  <strong>관찰을 넘어 대응하는 대피 훈련으로, Safe Route</strong>
 </div>
 
