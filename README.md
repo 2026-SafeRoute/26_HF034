@@ -226,12 +226,12 @@
     <td align="center"><b>멘토</b></td>
   </tr>
   <tr>
-    <td align="center">PM<br>FE • Design • HW</td>
-    <td align="center">FE • Design • HW</td>
-    <td align="center">BE • AI • HW • Infra</td>
-    <td align="center">BE • HW • Infra</td>
-    <td align="center">BE • AI • HW • Infra</td>
-    <td align="center">프로젝트 멘토 • 기술 자문</td>
+    <td align="center">PM<br>FE • Design<br>HW</td>
+    <td align="center">FE • Design<br>HW</td>
+    <td align="center">BE • AI<br>HW • Infra</td>
+    <td align="center">BE • HW<br>Infra</td>
+    <td align="center">BE • AI<br>HW • Infra</td>
+    <td align="center">프로젝트&nbsp;멘토<br>기술&nbsp;자문</td>
   </tr>
 </table>
 
