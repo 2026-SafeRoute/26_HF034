@@ -46,6 +46,10 @@
 <br />
 
 ## 💡1. 프로젝트 개요
+<p align="center">
+  <img width="1000" alt="Safe Route 배너" src="https://github.com/user-attachments/assets/0c3e869f-591b-4b07-9403-a91b2c09c360" />
+</p>
+
 
 ### 1-1. 프로젝트 소개
 - 프로젝트 명 : [Safe Route] AI·IoT 기반 실시간 화재 훈련 대피 관리 플랫폼
@@ -128,7 +132,7 @@
 
 <table>
   <tr>
-    <td align="center" width="50%"><img width="100%" alt="도면 관리 상세" src="https://github.com/user-attachments/assets/67b28ceb-ac77-44e4-bc8b-4dcb93ea6bbb" /></td>
+    <td align="center" width="50%"><img width="100%" alt="도면 관리 상세" src="https://github.com/user-attachments/assets/327d9c44-cb2b-413f-8f2a-76eaeb9f7652" /></td>
     <td align="center" width="50%"><img width="100%" alt="시나리오 설정" src="https://github.com/user-attachments/assets/b9fe8992-ca39-4f47-99b6-49e9ab29d05f" /></td>
   </tr>
   <tr>
@@ -208,15 +212,28 @@
 ## 💡2. 팀원 소개
 
 <table align="center">
-  <tr>
-    <td align="center"><!-- <a href="https://github.com/urapp13ofmyeye"> --><img width="80" height="100" alt="멘티1" src="https://github.com/urapp13ofmyeye.png"><!-- </a> --></td>
-    <td align="center"><!-- <a href="https://github.com/soyyyyy"> --><img width="80" height="100" alt="멘티2" src="https://github.com/soyyyyy.png"><!-- </a> --></td>
-    <td align="center"><!-- <a href="https://github.com/songmin0111"> --><img width="80" height="100" alt="멘티3" src="https://github.com/songmin0111.png"><!-- </a> --></td>
-    <td align="center"><!-- <a href="https://github.com/kyeonG0210"> --><img width="80" height="100" alt="멘티4" src="https://github.com/kyeonG0210.png"><!-- </a> --></td>
-    <td align="center"><!-- <a href="https://github.com/hakSick"> --><img width="80" height="100" alt="멘티5" src="https://github.com/hakSick.png"><!-- </a> --></td>
-    <td align="center"><img width="80" height="100" alt="멘토" src="https://github.com/user-attachments/assets/ae3ee84e-ef09-4d46-a864-c0243c664cb9"></td>
 
-  </tr>
+<!--
+  <tr>
+    <td align="center"><img width="80" height="100" alt="멘티1" src="https://github.com/urapp13ofmyeye.png"></td>
+    <td align="center"><img width="80" height="100" alt="멘티2" src="https://github.com/soyyyyy.png"></td>
+    <td align="center"><img width="80" height="100" alt="멘티3" src="https://github.com/songmin0111.png"</td>
+    <td align="center"><img width="80" height="100" alt="멘티4" src="https://github.com/kyeonG0210.png"></td>
+    <td align="center"><img width="80" height="100" alt="멘티5" src="https://github.com/hakSick.png"></td>
+    <td align="center"><img width="80" height="100" alt="멘토" src="https://github.com/user-attachments/assets/ae3ee84e-ef09-4d46-a864-c0243c664cb9"></td> 
+ </ tr>
+-->
+
+  <tr>
+    <td align="center"><img width="80" height="100" alt="멘티1" src="https://github.com/user-attachments/assets/8c26a4af-d0af-4327-95f1-b1dcb00af449"></td>
+    <td align="center"><img width="80" height="100" alt="멘티2" src="https://github.com/user-attachments/assets/7f042c9b-8e44-4826-b6b0-d56733b74638"></td>
+    <td align="center"><img width="80" height="100" alt="멘티3" src="https://github.com/user-attachments/assets/68488d36-d633-4037-b70d-bde88603eda0"</td>
+    <td align="center"><img width="80" height="100" alt="멘티4" src="https://github.com/user-attachments/assets/bdbd0453-836b-4b83-8687-bff396d53d6f"></td>
+    <td align="center"><img width="80" height="100" alt="멘티5" src="https://github.com/user-attachments/assets/939fcaf8-d967-4335-a995-a8109a8a5e5e"></td>
+    <td align="center"><img width="80" height="100" alt="멘토" src="https://github.com/user-attachments/assets/ae3ee84e-ef09-4d46-a864-c0243c664cb9"></td> 
+ </ tr>
+
+  
   <tr>
     <td align="center"><b>멘티1</b></td>
     <td align="center"><b>멘티2</b></td>
@@ -556,9 +573,6 @@ return () => void client.deactivate();
 <br />
 <br />
 
-<p align="center">
-  <img width="900" alt="Safe Route 배너" src="https://github.com/user-attachments/assets/0c3e869f-591b-4b07-9403-a91b2c09c360" />
-</p>
 
 <br />
 
