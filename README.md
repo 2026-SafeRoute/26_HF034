@@ -81,7 +81,7 @@
 <table>
   <tr>
     <th width="90">단계</th>
-    <th width="150">기능</th>
+    <th width="160">기능</th>
     <th>설명</th>
   </tr>
   <tr></tr>
